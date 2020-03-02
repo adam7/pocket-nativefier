@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:    
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Nativefier
+      run: npm install nativefier -g
+    - name: Nativefy the pocket website
+      run: nativefier --name "Pocket" --maximize "https://app.getpocket.com"
