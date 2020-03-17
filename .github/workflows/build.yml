@@ -14,4 +14,8 @@ jobs:
     - name: Install Nativefier
       run: npm install nativefier -g
     - name: Nativefy the pocket website
-      run: nativefier --name "Pocket" --maximize "https://app.getpocket.com"
+      run: nativefier --name "Pocket" --maximize "https://app.getpocket.com" -i icon.ico
+    - uses: actions/upload-artifact@master
+      with:
+        name: Pocket
+        path: "Pocket.exe"
