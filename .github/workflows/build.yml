@@ -18,4 +18,4 @@ jobs:
     - uses: actions/upload-artifact@master
       with:
         name: Pocket
-        path: "Pocket-win32-x64/Pocket.exe"
+        path: "Pocket-win32-x64"
