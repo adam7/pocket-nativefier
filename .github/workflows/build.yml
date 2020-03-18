@@ -8,10 +8,14 @@ jobs:
     timeout-minutes: 10
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [windows-latest]
     steps:
     - uses: actions/checkout@v2
     - name: Install Nativefier
       run: npm install nativefier -g
     - name: Nativefy the pocket website
-      run: nativefier --name "Pocket" --maximize "https://app.getpocket.com"
+      run: nativefier --name "Pocket" --maximize "https://app.getpocket.com" -i icon.ico
+    - uses: actions/upload-artifact@master
+      with:
+        name: Pocket
+        path: "Pocket-win32-x64"
