@@ -25,5 +25,9 @@ jobs:
         path: "Pocket-win32-x64"
     - uses: actions/upload-artifact@master
       with:
+        name: BBC Sounds
+        path: "BBC Sounds-win32-x64"        
+    - uses: actions/upload-artifact@master
+      with:
         name: PlayerFM
         path: "PlayerFM-win32-x64"
